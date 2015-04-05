@@ -1,0 +1,19 @@
+{% extends "MedicalGeneralBundle:Default:layout.html.twig" %}
+
+{% block content %}
+    <h1>Condition edit</h1>
+
+    {{ include('MedicalBundle:Condition:_common.html.twig') }}
+
+    <ul class="record_actions">
+        <li>
+            <a class="btn btn-success" href="#" onclick="addSymptom(); return false;">+ Add symptom</a>
+        </li>
+        <li>
+            <a href="{{ path('condition') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+{% endblock %}

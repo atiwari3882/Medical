@@ -1,0 +1,17 @@
+Medical\MedicalBundle\Entity\Symptom:
+    type: entity
+    table: symptoms
+    fields:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+            id: true
+        name: { type: string, length: 255 }
+    manyToOne:
+        condition:
+            targetEntity: Medical\MedicalBundle\Entity\Condition
+            inversedBy: symptoms
+            joinColumns:
+                condition_id:
+                    referencedColumnName: id

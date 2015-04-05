@@ -1,0 +1,13 @@
+admin:
+    path:     /admin
+    defaults: { _controller: UserBundle:Admin:index }
+
+login_admin:
+    path:     /login_admin
+    defaults: { _controller: UserBundle:Login:login }
+
+login_check_admin:
+    path:     /admin/login_check
+
+logout:
+    path:     /logout

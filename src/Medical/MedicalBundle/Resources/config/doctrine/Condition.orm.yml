@@ -1,0 +1,23 @@
+Medical\MedicalBundle\Entity\Condition:
+    type: entity
+    table: conditions
+    repositoryClass: Medical\MedicalBundle\Repository\ConditionRepository
+    fields:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+            id: true
+        name: { type: string, length: 255 }
+    oneToMany:
+        symptoms:
+            targetEntity: Medical\MedicalBundle\Entity\Symptom
+            mappedBy: condition
+            cascade: [remove, persist]
+    manyToOne:
+        user:
+            targetEntity: Medical\UserBundle\Entity\User
+            inversedBy: conditions
+            joinColumns:
+                user_id:
+                    referencedColumnName: id

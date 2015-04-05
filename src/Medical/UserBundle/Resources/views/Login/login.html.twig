@@ -1,0 +1,34 @@
+{% extends "MedicalGeneralBundle:Default:layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block content %}
+    {% if error %}
+        {{ block('error') }}
+    {% endif %}
+    <form action="{{ path("login_check_admin") }}" method="post" class="form_main">
+        <div class="input-main">
+            <div class="input-block">
+                <div class="grid _70 left ">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                    <div class="label"><label for="username">{{'login.labels.email'|trans({}, "form") }}</label></div>
+                    <div class="field"><input type="text" class="_90"  id="username" name="_username" value="{{ last_username }}" required="required" /> </div>
+
+                    <div class="label"><label for="password">{{ 'login.labels.password'|trans({}, "form") }}</label></div>
+                    <div class="field"><input type="password" class="_90"  id="password" name="_password" required="required" /> </div>
+                    <div class="stop"></div>
+                    <div class="remenber_me">
+                        <label class="left" for="remember_me">{{ 'login.labels.remember_me'|trans({}, "form") }}</label>
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                    </div>
+
+                </div>
+                <div class="grid _30 left connexion_pro">
+                    <input class="btn _40" type="submit" id="_submit" name="_submit" value="{{ 'login.labels.submit'|trans({}, "form") }}" />
+
+                </div>
+                <div class="stop"></div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

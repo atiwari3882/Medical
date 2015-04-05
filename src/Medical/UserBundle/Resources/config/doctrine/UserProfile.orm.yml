@@ -1,0 +1,21 @@
+Medical\UserBundle\Entity\UserProfile:
+    type:  entity
+    table: users_profile
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        firstname: { type: string, length: 200 }
+        lastname: { type: string, length: 200 }
+        birthday: { type: date, nullable: true }
+        gender: { type: string, length: 10, nullable: true }
+    oneToOne:
+        User:
+            targetEntity: Medical\UserBundle\Entity\User
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+            cascade: [persist, merge]
+            inversedBy: UserProfile

@@ -1,0 +1,30 @@
+condition:
+    path:     /
+    defaults: { _controller: "MedicalBundle:Condition:index" }
+
+condition_show:
+    path:     /{id}/show
+    defaults: { _controller: "MedicalBundle:Condition:show" }
+
+condition_new:
+    path:     /new
+    defaults: { _controller: "MedicalBundle:Condition:new" }
+
+condition_create:
+    path:     /create
+    defaults: { _controller: "MedicalBundle:Condition:create" }
+    methods:  POST
+
+condition_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MedicalBundle:Condition:edit" }
+
+condition_update:
+    path:     /{id}/update
+    defaults: { _controller: "MedicalBundle:Condition:update" }
+    methods:  [POST, PUT]
+
+condition_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MedicalBundle:Condition:delete" }
+    methods:  [POST, DELETE]

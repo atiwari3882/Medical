@@ -1,0 +1,11 @@
+medical_general:
+    resource: "@MedicalGeneralBundle/Resources/config/routing.yml"
+    prefix:   /
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+medical:
+    resource: "@MedicalBundle/Resources/config/routing.yml"
+    prefix:   /

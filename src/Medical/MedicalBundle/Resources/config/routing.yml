@@ -1,0 +1,7 @@
+medical_symptom:
+    resource: "@MedicalBundle/Resources/config/routing/symptom.yml"
+    prefix:   /admin/symptom
+
+medical_condition:
+    resource: "@MedicalBundle/Resources/config/routing/condition.yml"
+    prefix:   /admin/conditions

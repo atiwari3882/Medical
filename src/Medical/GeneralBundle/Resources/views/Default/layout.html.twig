@@ -1,0 +1,110 @@
+
+{% block body %}
+    <style>
+        .container {
+            padding: 50px 250px;
+            width: 100%;
+            float: left;
+            height: 100%;
+            background-color: #D3D3D3;
+        }
+        .content-block {
+            width: 600px;
+            padding: 50px;
+            height: auto;
+            background-color: #f6f6f6;
+            float: left;
+        }
+        label {
+            float:left;
+            height: 30px;
+            width: 200px;
+            text-align: right;
+            margin-right: 5px;
+        }
+        .field {
+            float: left;
+            height: 30px;
+            width: 300px;
+            text-align: left;
+        }
+        .field input {
+            width: 100%;
+        }
+        .stop {
+            clear: both;
+        }
+        .error {
+            color: red;
+        }
+        .notice {
+            color: yellow;
+        }
+        .records_list {
+            width: 100%;
+            text-align: left;
+        }
+        .records_list thead {
+            background-color: #999999;;
+        }
+        .records_list th, td {
+            padding: 2px 5px;
+        }
+        .records_list th a {
+            color: #eeeeee;
+        }
+        .records_list td a {
+            color: #000;
+        }
+        form .row {
+            width: 100%;
+            float: left;
+        }
+        .remove {
+            float:left;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <div class="container">
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+            <div class="flash-message notice">
+                <em>Notice</em>: {{ flashMessage }}
+            </div>
+        {% endfor %}
+
+        {% block content_header %}
+            <ul id="menu">
+                <li><a href="{{ path('admin') }}">Home</a></li>
+                {% block content_header_more %}
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <li><a href="{{ path('logout') }}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{{ path('login_admin') }}">Login</a></li>
+                    {% endif %}
+                {% endblock %}
+            </ul>
+
+            <div style="clear: both"></div>
+        {% endblock %}
+
+        <div class="content-block">
+            {% block content %}{% endblock %}
+        </div>
+
+        {% if code is defined %}
+            <h2>Code behind this page</h2>
+            <div class="block">
+                <div class="symfony-content">{{ code|raw }}</div>
+            </div>
+        {% endif %}
+    </div>
+    <div class="stop"></div>
+{% endblock %}
+
+{% block error %}
+    {% if error is defined %}
+        <div class="error">
+            {{ error }}
+        </div>
+    {% endif %}
+{% endblock %}

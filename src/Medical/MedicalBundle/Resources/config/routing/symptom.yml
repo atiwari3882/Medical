@@ -1,0 +1,30 @@
+symptom:
+    path:     /
+    defaults: { _controller: "MedicalBundle:Symptom:index" }
+
+symptom_show:
+    path:     /{id}/show
+    defaults: { _controller: "MedicalBundle:Symptom:show" }
+
+symptom_new:
+    path:     /new
+    defaults: { _controller: "MedicalBundle:Symptom:new" }
+
+symptom_create:
+    path:     /create
+    defaults: { _controller: "MedicalBundle:Symptom:create" }
+    methods:  POST
+
+symptom_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MedicalBundle:Symptom:edit" }
+
+symptom_update:
+    path:     /{id}/update
+    defaults: { _controller: "MedicalBundle:Symptom:update" }
+    methods:  [POST, PUT]
+
+symptom_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MedicalBundle:Symptom:delete" }
+    methods:  [POST, DELETE]

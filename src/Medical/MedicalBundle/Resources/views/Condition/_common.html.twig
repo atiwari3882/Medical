@@ -1,0 +1,29 @@
+{% form_theme form 'MedicalBundle:Condition:_form_fields.html.twig' %}
+    {{ form_start(form) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.user) }}
+<div class="js-symptom-collection row">
+    {{ form_row(form.symptoms) }}
+</div>
+<div class="stop"></div>
+{{ form_rest(form) }}
+<div class="stop"></div>
+
+<script>
+    symptomCollectionHolder = $('.js-symptom-collection div.js-symptom-body');
+    symptomCollectionHolderNb = symptomCollectionHolder.children().length;
+    if (!symptomCollectionHolderNb) {
+        addSymptom();
+    }
+    function addSymptom() {
+        var dataPrototype = symptomCollectionHolder.attr('data-prototype');
+        symptomCollectionHolderNb++;
+        var newForm = dataPrototype.replace(/__name__/g, symptomCollectionHolderNb);
+        $(symptomCollectionHolder).append(newForm);
+    }
+
+    function removeSymptom(that) {
+        $(that).closest('.js-symptom-single-row').remove();
+    }
+</script>
+{{ form_end(form) }}

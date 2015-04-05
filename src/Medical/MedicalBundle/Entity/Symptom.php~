@@ -1,0 +1,12 @@
+<?php
+
+namespace Medical\MedicalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Symptom
+ */
+class Symptom
+{
+}

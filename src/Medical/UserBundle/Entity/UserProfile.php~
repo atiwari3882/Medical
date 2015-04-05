@@ -1,0 +1,12 @@
+<?php
+
+namespace Medical\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * UserProfile
+ */
+class UserProfile
+{
+}

@@ -1,0 +1,12 @@
+
+{% block form_row %}
+    <div class="row">
+        <div class="label">
+            {{ form_label(form) }}
+        </div>
+        <div class="field">
+            {{ form_widget(form) }}
+        </div>
+        {{ form_errors(form) }}
+    </div>
+{% endblock %}
