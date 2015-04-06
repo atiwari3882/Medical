@@ -32,7 +32,7 @@ security:
             anonymous: true
             logout:
                 path: /logout
-                target: /login_admin
+                target: /
                 invalidate_session: false
 
     access_control:

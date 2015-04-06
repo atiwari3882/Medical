@@ -34,9 +34,11 @@
         {% endfor %}
         </tbody>
     </table>
-    <a href="{{ path('condition') }}">Manage condition</a>
-    &nbsp;&nbsp;&nbsp;
-    <a href="{{ path('symptom') }}">Manage Symptom</a>
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <a href="{{ path('condition') }}">Manage condition</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="{{ path('symptom') }}">Manage Symptom</a>
+    {% endif %}
     {# display navigation #}
     <div class="navigation">
         {{ knp_pagination_render(pagination) }}

@@ -2,6 +2,10 @@ admin:
     path:     /admin
     defaults: { _controller: UserBundle:Admin:index }
 
+homepage:
+    path:     /
+    defaults: { _controller: UserBundle:Admin:index }
+
 login_admin:
     path:     /login_admin
     defaults: { _controller: UserBundle:Login:login }
