@@ -1,5 +1,8 @@
 Medical
 =======
+
+This small test project is regarding to create medical conditions & symtoms and list all conditions with symptoms on homepage /. so what I have done to create user, I have used some third party bundle like FOSUserBundle, DoctrineFixture, KnpPaginator. Rest everthing in detail description in pdf which I gotted by email
+
 Few basic step need to do for setup project
 
 STEP 1=> Take clone of this project
