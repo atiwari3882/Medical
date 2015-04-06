@@ -41,9 +41,8 @@ class ConditionController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $symptoms = $entity->getSymptoms();
-            foreach ($symptoms as $symptom) {
-                $symptom->setCondition($entity);
+            foreach ($entity->getSymptoms() as $symptom) {
+                $symptom->getConditions()->add($entity);
             }
             $em->persist($entity);
             $em->flush();
@@ -169,14 +168,24 @@ class ConditionController extends Controller
             throw $this->createNotFoundException('Unable to find Condition entity.');
         }
 
+
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
-            $symptoms = $entity->getSymptoms();
-            foreach ($symptoms as $symptom) {
-                $symptom->setCondition($entity);
+            $previousSymptoms = $em->getRepository('MedicalBundle:Symptom')
+                ->getElements(['by_condition' => $id, 'by_action' => 'execute']);
+
+            foreach ($previousSymptoms as $previousSymptom) {
+                if ($entity->getSymptoms()->contains($previousSymptom) == false) {
+                    $previousSymptom->removeCondition($entity);
+                }
+            }
+            foreach ($entity->getSymptoms() as $symptom) {
+                if ($symptom->getConditions()->contains($entity) == false) {
+                    $symptom->getConditions()->add($entity);
+                }
             }
             $em->flush();
 

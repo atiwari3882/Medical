@@ -25,11 +25,6 @@ class Condition
     private $symptoms;
 
     /**
-     * @var \Medical\UserBundle\Entity\User
-     */
-    private $user;
-
-    /**
      * Constructor
      */
     public function __construct()
@@ -101,28 +96,5 @@ class Condition
     public function getSymptoms()
     {
         return $this->symptoms;
-    }
-
-    /**
-     * Set user
-     *
-     * @param \Medical\UserBundle\Entity\User $user
-     * @return Condition
-     */
-    public function setUser(\Medical\UserBundle\Entity\User $user = null)
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * Get user
-     *
-     * @return \Medical\UserBundle\Entity\User 
-     */
-    public function getUser()
-    {
-        return $this->user;
     }
 }

@@ -1,6 +1,7 @@
 Medical\MedicalBundle\Entity\Symptom:
     type: entity
     table: symptoms
+    repositoryClass: Medical\MedicalBundle\Repository\SymptomRepository
     fields:
         id:
             type: integer
@@ -8,10 +9,15 @@ Medical\MedicalBundle\Entity\Symptom:
                 strategy: AUTO
             id: true
         name: { type: string, length: 255 }
-    manyToOne:
-        condition:
+    manyToMany:
+        conditions:
             targetEntity: Medical\MedicalBundle\Entity\Condition
             inversedBy: symptoms
-            joinColumns:
-                condition_id:
-                    referencedColumnName: id
+            joinTable:
+                name: condition_symptom
+                joinColumns:
+                    symptom_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    condition_id:
+                        referencedColumnName: id

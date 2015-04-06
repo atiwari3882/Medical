@@ -1,0 +1,16 @@
+{% extends "MedicalGeneralBundle:Default:layout.html.twig" %}
+
+{% block content %}
+    <h1>Symptom edit</h1>
+
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('symptom') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

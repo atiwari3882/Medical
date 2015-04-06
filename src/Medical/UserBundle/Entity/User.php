@@ -26,11 +26,6 @@ class User extends BaseUser
     private $UserProfile;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $conditions;
-
-    /**
      * Constructor
      */
     public function __construct()
@@ -93,38 +88,5 @@ class User extends BaseUser
     public function getUserProfile()
     {
         return $this->UserProfile;
-    }
-
-    /**
-     * Add conditions
-     *
-     * @param \Medical\MedicalBundle\Entity\Condition $conditions
-     * @return User
-     */
-    public function addCondition(\Medical\MedicalBundle\Entity\Condition $conditions)
-    {
-        $this->conditions[] = $conditions;
-
-        return $this;
-    }
-
-    /**
-     * Remove conditions
-     *
-     * @param \Medical\MedicalBundle\Entity\Condition $conditions
-     */
-    public function removeCondition(\Medical\MedicalBundle\Entity\Condition $conditions)
-    {
-        $this->conditions->removeElement($conditions);
-    }
-
-    /**
-     * Get conditions
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getConditions()
-    {
-        return $this->conditions;
     }
 }

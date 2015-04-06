@@ -28,21 +28,18 @@ class LoadConditions extends AbstractFixture implements OrderedFixtureInterface,
     function load(ObjectManager $manager)
     {
         $this->manager = $manager;
-        $user = $this->getReference('admin');
-        $this->createCondition('Asthma', $user);
-        $this->createCondition('Diabetes', $user);
+        $this->createCondition('Asthma');
+        $this->createCondition('Diabetes');
         $manager->flush();
     }
 
     /**
-     * @param string $name
-     * @param User $user
+     * @param $name
      */
-    private function createCondition($name, User $user)
+    private function createCondition($name)
     {
         $condition = new Condition();
         $condition->setName($name);
-        $condition->setUser($user);
         $this->manager->persist($condition);
         $this->addReference($name, $condition);
     }

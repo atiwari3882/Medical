@@ -49,7 +49,7 @@ class LoadSymptoms extends AbstractFixture implements OrderedFixtureInterface, C
     {
         $symptom = new Symptom();
         $symptom->setName($name);
-        $symptom->setCondition($condition);
+        $symptom->getConditions()->add($condition);
         $this->manager->persist($symptom);
     }
 

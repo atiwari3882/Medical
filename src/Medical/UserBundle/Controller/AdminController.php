@@ -13,13 +13,9 @@ class AdminController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $queryParams = [];
-        if ($this->getUser()) {
-            $queryParams['by_user'] = $this->getUser()->getId();
-        }
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
-            $this->get('app.condition.repository')->getElements($queryParams),
+            $this->get('app.condition.repository')->getElements(),
             $request->query->get('page', 1),
             10
         );

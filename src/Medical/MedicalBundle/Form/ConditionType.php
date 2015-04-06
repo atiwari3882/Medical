@@ -5,6 +5,8 @@ namespace Medical\MedicalBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Validator\Constraints\Count;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ConditionType extends AbstractType
 {
@@ -15,13 +17,12 @@ class ConditionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('user')
-            ->add('symptoms', 'collection', [
-                'type' => new SymptomType(),
-                'allow_add' => true,
-                'allow_delete' => true,
-                'prototype' => true,
+            ->add('name', 'text', ['constraints' => [new NotBlank()]])
+            ->add('symptoms', 'entity', [
+                'class' => 'MedicalBundle:Symptom',
+                'multiple' => true,
+                'property' => 'name',
+                'constraints' => [new NotBlank(), new Count(1)]
             ])
         ;
     }

@@ -16,7 +16,3 @@ Medical\UserBundle\Entity\User:
             targetEntity: Medical\UserBundle\Entity\UserProfile
             mappedBy: User
             cascade: ["persist", "merge"]
-    oneToMany:
-        conditions:
-            targetEntity: Medical\MedicalBundle\Entity\Condition
-            mappedBy: user

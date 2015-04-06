@@ -20,10 +20,17 @@ class Symptom
     private $name;
 
     /**
-     * @var \Medical\MedicalBundle\Entity\Condition
+     * @var \Doctrine\Common\Collections\Collection
      */
-    private $condition;
+    private $conditions;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->conditions = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -59,25 +66,35 @@ class Symptom
     }
 
     /**
-     * Set condition
+     * Add conditions
      *
-     * @param \Medical\MedicalBundle\Entity\Condition $condition
+     * @param \Medical\MedicalBundle\Entity\Condition $conditions
      * @return Symptom
      */
-    public function setCondition(\Medical\MedicalBundle\Entity\Condition $condition = null)
+    public function addCondition(\Medical\MedicalBundle\Entity\Condition $conditions)
     {
-        $this->condition = $condition;
+        $this->conditions[] = $conditions;
 
         return $this;
     }
 
     /**
-     * Get condition
+     * Remove conditions
      *
-     * @return \Medical\MedicalBundle\Entity\Condition 
+     * @param \Medical\MedicalBundle\Entity\Condition $conditions
      */
-    public function getCondition()
+    public function removeCondition(\Medical\MedicalBundle\Entity\Condition $conditions)
     {
-        return $this->condition;
+        $this->conditions->removeElement($conditions);
+    }
+
+    /**
+     * Get conditions
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getConditions()
+    {
+        return $this->conditions;
     }
 }

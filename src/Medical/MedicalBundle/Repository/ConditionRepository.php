@@ -8,9 +8,8 @@ use Doctrine\ORM\EntityRepository;
 class ConditionRepository extends EntityRepository
 {
     /**
-     * GET billing data according to params
      * @param array $params
-     * @return Billing
+     * @return QueryBuilder
      */
     public function getElements(array $params = [])
     {

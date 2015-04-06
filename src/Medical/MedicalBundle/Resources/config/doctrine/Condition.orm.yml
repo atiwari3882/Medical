@@ -9,15 +9,7 @@ Medical\MedicalBundle\Entity\Condition:
                 strategy: AUTO
             id: true
         name: { type: string, length: 255 }
-    oneToMany:
+    manyToMany:
         symptoms:
             targetEntity: Medical\MedicalBundle\Entity\Symptom
-            mappedBy: condition
-            cascade: [remove, persist]
-    manyToOne:
-        user:
-            targetEntity: Medical\UserBundle\Entity\User
-            inversedBy: conditions
-            joinColumns:
-                user_id:
-                    referencedColumnName: id
+            mappedBy: conditions
