@@ -22,7 +22,7 @@ class ConditionType extends AbstractType
                 'class' => 'MedicalBundle:Symptom',
                 'multiple' => true,
                 'property' => 'name',
-                'constraints' => [new NotBlank(), new Count(1)]
+                'constraints' => [new NotBlank(), new Count(['min' => 1])]
             ])
         ;
     }

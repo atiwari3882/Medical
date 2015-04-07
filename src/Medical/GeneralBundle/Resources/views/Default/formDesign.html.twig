@@ -7,6 +7,9 @@
         <div class="field">
             {{ form_widget(form) }}
         </div>
-        {{ form_errors(form) }}
+        <div class="error">
+            {{ form_errors(form) }}
+        </div>
+        <div class="stop"></div>
     </div>
 {% endblock %}

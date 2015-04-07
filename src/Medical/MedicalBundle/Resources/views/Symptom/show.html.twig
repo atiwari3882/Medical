@@ -13,6 +13,18 @@
                 <th>Name</th>
                 <td>{{ entity.name }}</td>
             </tr>
+            {% if entity.conditions|length %}
+                <tr>
+                    <th>Conditions({{ entity.conditions|length }})</th>
+                    <td>
+                        <ul>
+                            {% for condition in entity.conditions %}
+                                <li><a href="{{ path('condition_show', {'id': condition.id}) }}">{{ condition.name }}</a> </li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            {% endif %}
         </tbody>
     </table>
 

@@ -13,6 +13,18 @@
                 <th>Name</th>
                 <td>{{ entity.name }}</td>
             </tr>
+            {% if entity.symptoms|length %}
+            <tr>
+                <th>Symptoms({{ entity.symptoms|length }})</th>
+                <td>
+                    <ul>
+                        {% for symptom in entity.symptoms %}
+                            <li><a href="{{ path('symptom_show', {'id': symptom.id}) }}">{{ symptom.name }}</a> </li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+        {% endif %}
         </tbody>
     </table>
 
