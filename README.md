@@ -19,13 +19,13 @@ Then you can answer questions after complete that process english user gets emai
   * qTranslate-X v3000.4.6.4(Original 3.4.6.4) 
   * **NOTE-** IF anyone want to update "qTranslate-X" to newer version then they have to follow small step so that user environment locale will not affect
                 Which is 3 line codes need to put in file **qtranslate_core.php:64**
-    <pre>
-    <?php 
-              if (get_current_user_id()) {
-                  $locale = get_user_meta(get_current_user_id(), 'pie_dropdown_3');
-                  $url_info['language'] = !empty($locale[0]) ? $locale[0] : '';
-              }
-        ?>
+    <pre> 
+       <?php 
+          if (get_current_user_id()) {
+              $locale = get_user_meta(get_current_user_id(), 'pie_dropdown_3');
+              $url_info['language'] = !empty($locale[0]) ? $locale[0] : '';
+          }
+       ?>    
     </pre>
 ### Multilingual behaviour on user interface:-
  * Two languages(fr/en) are active for the moment.
