@@ -35,3 +35,6 @@ Then you can answer questions after complete that process english user gets emai
 ### Project technology used:-  
   * PHP & Mysql
   * Wordpress 4.3.1
+  
+### Read language doc if someone want allow any new language
+   <a href="language-doc.txt">New language enable process</a>
