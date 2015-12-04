@@ -13,7 +13,7 @@ Then you can answer questions after complete that process english user gets emai
   * Courspress Pro v1000.2.2.9 (original 1.2.2.9)
   * Pie register v2000.0.14 (original 2.0.14)
   * qTranslate-X v3000.4.6.4(Original 3.4.6.4) 
-  * **NOTE-** IF anyone want to update "qTranslate-X" to newer version then they have to follow small step so that user environment locale will not affect
+  * **Important note-** IF anyone want to update "qTranslate-X" to newer version then they have to follow small step so that user environment locale will not affect
                 Which is 3 line codes need to put in file **qtranslate_core.php:64**
     <pre> 
        <?php 
@@ -22,6 +22,7 @@ Then you can answer questions after complete that process english user gets emai
               $url_info['language'] = !empty($locale[0]) ? $locale[0] : '';
           }
        ?>    
+### Rest all plugins and language files can upgrade
     
 ### Multilingual behaviour on user interface:-
  * Two languages(fr & en) are using for the moment but we can allow more languages.
