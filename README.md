@@ -24,7 +24,7 @@ Then you can answer questions after complete that process english user gets emai
        ?>    
     
 ### Multilingual behaviour on user interface:-
- * Two languages(fr/en) are active for the moment.
+ * Two languages(fr & en) are using for the moment but we can allow more languages.
  * When user register they choose preffered langauage and it impact on user locale.
  * After login interface will translate according to logged in user prefereed langage.
   
