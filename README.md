@@ -15,15 +15,15 @@ Then you can answer questions after complete that process english user gets emai
 
 ### List of plugins which will never upgrade:-
   * Courspress Pro
-  ** *Note-* For now, we have 1000.2.2.9 (original was 1.2.2.9)
+  ** Note- For now, we have 1000.2.2.9 (original was 1.2.2.9)
   * Pie register
-  ** *Note-* For now, we have 2000.0.14 (original was 2.0.14)
+  ** Note- For now, we have 2000.0.14 (original was 2.0.14)
   * qTranslate-X
-  ** *Note-* For now, we have 3000.4.6.4 (original was 3.4.6.4)
-  ** *Special note- IF anyone want to update to newer version then they have to follow small step so that user environment locale will not effect*
-  *** Which is 3 line codes need to update after upgradation of plugin. 
-  **** Update in qtranslate_core.php:64
-  ***** <?php 
+  ** Note- For now, we have 3000.4.6.4 (original was 3.4.6.4)
+  ** Special note- IF anyone want to update to newer version then they have to follow small step so that user environment locale will not effect*
+  ** Which is 3 line codes need to update after upgradation of plugin. 
+  ** Update in qtranslate_core.php:64
+  ** <?php 
           	if (get_current_user_id()) {
         		$locale = get_user_meta(get_current_user_id(), 'pie_dropdown_3');
         		$url_info['language'] = !empty($locale[0]) ? $locale[0] : '';
