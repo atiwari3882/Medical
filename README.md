@@ -26,7 +26,7 @@ Then you can answer questions after complete that process english user gets emai
               $url_info['language'] = !empty($locale[0]) ? $locale[0] : '';
           }
        ?>    
-    </pre>
+    
 ### Multilingual behaviour on user interface:-
  * Two languages(fr/en) are active for the moment.
  * When user register they choose preffered langauage and it impact on user locale.
