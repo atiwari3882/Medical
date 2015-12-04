@@ -31,14 +31,7 @@ Then you can answer questions after complete that process english user gets emai
  * Two languages(fr/en) are active for the moment.
  * When user register they choose preffered langauage and it impact on user locale.
  * After login interface will translate according to logged in user prefereed langage.
-   
-### qTranslate-X v3000.4.6.4(Original 3.4.6.4) plugin can update but be carefull:-
-  * In this plugin, there have hard code which reflect entire project so be carefull before update.
-  * There have 3 lines code in file qtranslate_core.php:64
   
 ### Project technology used:-  
   * PHP & Mysql
   * Wordpress 4.3.1
-  
-  
-
