@@ -1,8 +1,4 @@
-# README 
-
-This README would normally document whatever steps are necessary to get your application up and running.
-
-### Briefing about Nexium:-
+# Nexium 
 Nexium supports multilingual. This project provides e-learning modules for assessments but before assesment module you have to login in as an user. 
 Then you can answer questions after complete that process english user gets email and can download his certificate which generate after competing process.
 
