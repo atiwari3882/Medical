@@ -28,7 +28,7 @@ Then you can answer questions after complete that process english user gets emai
  * When user register they choose preffered langauage and it impact on user locale.
  * After login interface will translate according to logged in user prefereed langage.
   
-### Project technology used:-  
+### Project technologies:-  
   * PHP & Mysql
   * Wordpress 4.3.1
   
