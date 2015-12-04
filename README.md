@@ -15,7 +15,7 @@ Then you can answer questions after complete that process english user gets emai
 
 ### List of plugins which will never upgrade:-
   * Courspress Pro
-  ** Note- For now, we have 1000.2.2.9 (original was 1.2.2.9)
+  * ###Note-### For now, we have 1000.2.2.9 (original was 1.2.2.9)
   * Pie register
   ** Note- For now, we have 2000.0.14 (original was 2.0.14)
   * qTranslate-X
